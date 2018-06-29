@@ -20,7 +20,7 @@ class ImmClass {
         return $this->num;
     }
 
-    public function setValue($str)
+    public function setStr($str)
     {
         return new ImmClass($str, $this->num);
     }
