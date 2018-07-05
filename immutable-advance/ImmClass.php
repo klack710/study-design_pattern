@@ -3,15 +3,15 @@
 class ImmClass {
     private $str;
     private $num;
-    // (TODO)
-    // 次の課題。フィールドにインスタンスを持ったときに
+    // フィールドにインスタンスを持ったときに
     // 複製したImmClassのフィールドのインスタンスは独立しているか？
     private $object;
 
-    public function __construct($str, $num)
+    public function __construct($str, $num, $object)
     {
         $this->str = $str;
         $this->num = $num;
+        $this->object = clone $object;
     }
 
     public function getStr()
@@ -24,13 +24,24 @@ class ImmClass {
         return $this->num;
     }
 
+    public function getObject()
+    {
+        return $this->object;
+    }
+
     public function setStr($str)
     {
-        return new ImmClass($str, $this->num);
+        return new ImmClass($str, $this->num, clone $this->object);
     }
 
     public function setNum($num)
     {
-        return new ImmClass($this->str, $num);
+        return new ImmClass($this->str, $num, clone $this->object);
     }
+
+    public function setObject($object)
+    {
+        return new ImmClass($this->str, $this->num, clone $object);
+    }
+
 }
