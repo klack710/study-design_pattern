@@ -31,17 +31,17 @@ class ImmClass {
 
     public function setStr($str)
     {
-        return new ImmClass($str, $this->num, clone $this->object);
+        return new ImmClass($str, $this->num, $this->object);
     }
 
     public function setNum($num)
     {
-        return new ImmClass($this->str, $num, clone $this->object);
+        return new ImmClass($this->str, $num, $this->object);
     }
 
     public function setObject($object)
     {
-        return new ImmClass($this->str, $this->num, clone $object);
+        return new ImmClass($this->str, $this->num, $object);
     }
 
 }
