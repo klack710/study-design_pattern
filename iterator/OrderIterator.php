@@ -6,16 +6,16 @@ class OrderIterator extends BaseIterator
     public function __construct($values)
     {
         $this->values = $values;
-        $this->index = 0;
+        $this->index = -1;
     }
 
     public function Next()
     {
-        return $this->values[$this->index++];
+        return $this->values[++$this->index];
     }
 
     public function hasNext()
     {
-        return isset($this->values[$this->index]);
+        return isset($this->values[$this->index + 1]);
     }
 }
