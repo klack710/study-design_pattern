@@ -9,7 +9,7 @@ class OrderIterator extends BaseIterator
         $this->index = -1;
     }
 
-    public function Next()
+    public function next()
     {
         return $this->values[++$this->index];
     }
