@@ -1,11 +1,14 @@
-public abstract class Factory {
-    protected abstract void print(Product product);
+public abstract class Printer {
     // ここで各クラス毎にインスタンス化するものが
     // 異なるのがミソ？
     protected abstract Product createProduct();
 
-    // ここで実行したいものを記述している
-    // ただ、ここに書かずに、ConcreteFactoryに書いても良い？
+    protected void print(Product product) {
+        System.out.println("***");
+        System.out.println(product.getOwnName());
+        System.out.println("***");
+    }
+
     public void printOwnProduct(){
         Product product = createProduct();
         print(product);
