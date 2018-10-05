@@ -1,7 +1,7 @@
 public abstract class TemplateChangeCartButton {
-    public abstract void changeClickedCartButton(String button_position, int product_id);
-    public abstract void changeSameProductCartButton(int product_id);
-    public void attachGaEvent() {
+    protected abstract void changeClickedCartButton(String button_position, int product_id);
+    protected abstract void changeSameProductCartButton(int product_id);
+    private void attachGaEvent() {
         System.out.println("変更に使ったボタンに対してGAイベントを付与するよ");
     }
 
